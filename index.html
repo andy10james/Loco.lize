@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>loco.lize</title>
+    
+    <!-- loco.lization -->
+    <script src="script/loco/loco.text.js" type="text/javascript"></script>
+    <script src="script/loco/loco.locale.js" type="text/javascript"></script>
+    <script src="script/loco/loco.manager.js" type="text/javascript"></script>
+    
+    <link rel="stylesheet" type="text/css" href="style/index.css" />
+    <link rel="stylesheet" type="text/css" href="style/prism.css" />
+   
+</head>
+<body>
+
+    <header>
+        <h1>l<em>o</em>co.lize</h1>
+    </header>
+    <menu>
+        <a href="#loco_manager">loco.Manager<br/><small>Basic localization management</small></a>
+        <a href="#loco_locale">loco.Locale<br/><small>Basic text library for a locale</small></a>
+        <a href="#loco_text">loco.Text<br/><small>Text management and formatting</small></a>
+        <a href="#loco_text">loco.Loco<br/><small>Addition loco accessors for strings</small></a>
+        <footer>Baaaaaaajjaaaaaay!!?!</footer>
+    </menu>
+    <content>
+        <section>
+        <a name="loco_manager">
+        <h2>loco.Manager</h2>
+        </a>
+        <h3>Definition via Loco.lization Manager</h3>
+        <br/>
+        <label>Code</label>
+        <code class="language-javascript">var manager = new loco.Manager();
+manager.for("en-US").area("dashboard").text("welcome").is("Welcome to $0, we ${hope|really hope}$ $1 $[have|has]$ a good time here!");</code>
+        <script type="text/javascript">
+            /**/ var manager = new loco.Manager(); /**/
+            /**/ manager.for("enUS").area("dashboard").text("welcome").is("Welcome to $0, we ${hope|really hope}$ $1 $[have|has]$ a good time here!") /**/
+        </script>
+        <br/>
+        
+        <h3>Usage via Loco.lization Manager</h3>
+        <br/>
+        <label>Code</label>
+        <code class="language-javascript">manager.for("en-US").area("dashboard").text("welcome").with('Loco manager', 'your multilingual team').opt('{','}',0).sing</code>
+        <label>Result</label>        
+        <pre><script type="text/javascript">document.write(
+            /**/ manager.for("enUS").area("dashboard").text("welcome").with('Loco manager', 'your multilingual team').opt('{','}',0).sing /**/
+        )</script></pre>
+        <br/>
+    
+        <h3>Usage via Loco.lization Manager (member navigation)</h3>
+        <small>
+            Don't call your texts, areas, or locals <em>'default'</em>, <em>'for'</em>, <em>'area'</em>, or <em>'text'</em> if you want to keep using Loco Management objects for new locals, areas and/or texts. May make these read only properties in the future.
+        </small>
+        <br/><br/>
+        <label>Code</label>
+        <code class="language-javascript">manager.default.dashboard.welcome.with('Loco manager', 'your multilingual team').opt('{','}',0).sing</code>
+        <label>Result</label>
+        <pre><script type="text/javascript">document.write(
+            /**/ manager.enUS.dashboard.welcome.with('Loco manager', 'your multilingual team').opt('{','}',0).sing /**/
+        )</script></pre>
+        </section>
+        
+        <section>
+        <a name="loco_locale">
+        <h2>loco.Locale</h2>
+        </a>
+        Don't call your texts, areas, or locals <em>'default'</em>, <em>'for'</em>, <em>'area'</em>, or <em>'text'</em> if you want to keep using Loco Management objects for new locals, areas and/or texts. May make these read only properties in the future.
+        <br/><br/>
+        <label>Code</label>
+        <code class="language-javascript">manager.default.dashboard.welcome.with('Loco manager', 'your multilingual team').opt('{','}',0).sing</code>
+        <label>Result</label>
+        <pre><script type="text/javascript">document.write(
+            /**/ manager.enUS.dashboard.welcome.with('Loco manager', 'your multilingual team').opt('{','}',0).sing /**/
+        )</script></pre>
+        </section>
+    
+        <section>
+        <a name="loco_text">
+        <h2>loco.Text</h3>
+        </a>
+        <label>Code</label>
+        <code class="language-javascript">loco("Welcome to $0, we ${hope|really hope}$ $1 $[have|has]$ a good time here!").with('Loco', 'your dango').opt('{','}',1).plur</code>
+        <label>Result</label>
+        <pre><script type="text/javascript">document.write(
+            /**/ loco.Loco("Welcome to $0, we ${hope|really hope}$ $1 $[have|has]$ a good time here!").with('Loco', 'your dango').opt('{','}',1).plur /**/
+        )</script></pre>
+        </section>
+        
+            
+        <section>
+        <a name="loco_loco">
+        <h2>loco.Loco</h3>
+        </a>
+        <label>Code</label>
+        <code class="language-javascript">loco.Loco("Welcome to $0, we ${hope|really hope}$ $1 $[have|has]$ a good time here!").with('Loco', 'your dango').opt('{','}',1).plur</code>
+        <label>Result</label>
+        <pre><script type="text/javascript">document.write(
+            /**/ loco.Loco("Welcome to $0, we ${hope|really hope}$ $1 $[have|has]$ a good time here!").with('Loco', 'your dango').opt('{','}',1).plur /**/
+        )</script></pre>
+        </section>
+        
+    </content>
+    <script src="script/prism.js" type="text/javascript"></script>
+
+</body>
+</html>
